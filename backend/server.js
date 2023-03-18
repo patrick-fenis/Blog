@@ -4,14 +4,14 @@
 
 require('dotenv').config()
 const express = require('express')
-const app = express();
+const app = express()
 // const mongoose = require('mongoose')
 // const mongoURI = process.env.MONGOURI
-const PORT = 3001
+const PORT = 4000
 
 
 ////////////////////////////////////////
-//////Middleware
+/// Middleware
 ////////////////////////////////////////
 
 // const db = mongoose.connection 
@@ -22,20 +22,27 @@ app.use(express.urlencoded({extended: true}))
 app.use('/public', express.static('public'))
 
 
+////////////////////////////////////////
+/// Routes 
+////////////////////////////////////////
+
+// test route
+app.get("/", (req, res) => {
+  res.send("Hello, World!")
+})
+
+// GET - BLOG INDEX
+app.get("/blogs", (req, res) => {
+  // boilerplate for blogs
+  res.send("All of the blogs!")
+})
 
 
 
 
-
-
-
-
-
-
-
-///////////////////////////////////////////////
-//////Connections
-//////////////////////////////////////////////
+////////////////////////////////////////
+/// Connections
+////////////////////////////////////////
 
 // mongoose.connect(mongoURI, {useNewUrlParser: true})
 // db.on('error', (err) => {console.log(`${err.message}... Is mongodb not working?`)})
