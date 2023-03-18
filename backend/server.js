@@ -7,7 +7,7 @@ const express = require('express')
 const app = express()
 // const mongoose = require('mongoose')
 // const mongoURI = process.env.MONGOURI
-const PORT = 4000
+const PORT = 3001
 
 
 ////////////////////////////////////////
