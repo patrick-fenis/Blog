@@ -18,7 +18,7 @@ const mongoose = require('mongoose')
 const cors = require("cors")
 const morgan = require("morgan")
 
-// import 
+
 
 ////////////////////////////////////////
 /// Middleware
@@ -54,6 +54,11 @@ app.get("/", (req, res) => {
 //   res.send("All of the blogs!")
 // })
 
+// app.get("/people", async (req, res) => {
+//   try {
+//     res.json(await )
+//   }
+// })
 
 
 
