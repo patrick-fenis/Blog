@@ -54,7 +54,7 @@ router.get("/", (req, res) => {
 
 ///Route to Test DB
 
-router.get("/people", async (req, res) => {
+router.get("/test", async (req, res) => {
   try {
     res.json(await BlogSchema.find({}))
   } catch (error) {
