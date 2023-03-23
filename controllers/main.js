@@ -4,7 +4,7 @@
 
 const express = require('express')
 const router = express.Router()
-const BlogSchema = require('../backend/models/blog')
+const BlogSchema = require('../models/blog')
 
 
 ////////////////////////////////////////
