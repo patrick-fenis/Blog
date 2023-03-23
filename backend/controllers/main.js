@@ -52,11 +52,15 @@ router.get("/", (req, res) => {
 //   res.send("All of the blogs!")
 // })
 
-// router.get("/people", async (req, res) => {
-//   try {
-//     res.json(await )
-//   }
-// })
+///Route to Test DB
+
+router.get("/people", async (req, res) => {
+  try {
+    res.json(await BlogSchema.find({}))
+  } catch (error) {
+    res.status(400).json(error);
+  }
+})
 
 
 
