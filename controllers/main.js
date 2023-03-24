@@ -44,7 +44,7 @@ router.get("/test", async (req, res) => {
   }
 })
 
-// GET - BLOG INDEX
+// GET ROUTE - BLOG INDEX
 router.get("/", async (req, res) => {
   try {
     res.json(await Blog.find({}))
@@ -53,7 +53,7 @@ router.get("/", async (req, res) => {
   }
 })
 
-// NEW ROUTE
+// POST ROUTE - NEW BLOG
 router.post("/post", async (req, res) => {
     try {
         res.json(await Blog.create(req.body));
@@ -62,10 +62,19 @@ router.post("/post", async (req, res) => {
       }
   })
 
-// GET - BLOG SHOW
+// GET ROUTE - BLOG SHOW
 router.get("/:id", async (req, res) => {
   try {
     res.json(await Blog.findById(req.params.id))
+  } catch (error) {
+    res.status(400).json(error)
+  }
+})
+
+// DELETE ROUTE - DELETE BLOG
+router.delete("/:id", async (req, res) => {
+  try {
+    res.json(await People.findByIdAndRemove(req.params.id))
   } catch (error) {
     res.status(400).json(error)
   }
