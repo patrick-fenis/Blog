@@ -74,17 +74,15 @@ router.get("/:id", async (req, res) => {
 // DELETE ROUTE - DELETE BLOG
 router.delete("/:id", async (req, res) => {
   try {
-    res.json(await People.findByIdAndRemove(req.params.id))
+    res.json(await Blog.findByIdAndRemove(req.params.id))
   } catch (error) {
     res.status(400).json(error)
   }
 })
 
 
-
 ////////////////////////////////////////
 /// Export Line
 ////////////////////////////////////////
-
 
 module.exports = router

@@ -7,7 +7,7 @@ require('dotenv').config()
 
 // pull variables from .env
 // if PORT doesn't exist, give default value of 3000
-const {MONGODB_URI, PORT = 3000} = process.env
+const {MONGOURI, PORT = 3000} = process.env
 
 //import express and create application object
 const express = require('express')
@@ -46,13 +46,13 @@ app.use("/blogs", mainController)
 ////////////////////////////////////////
 
 const db = mongoose.connection
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(MONGOURI, {
   useUnifiedTopology: true,
   useNewUrlParser: true, 
 })
 
 db
-.on('connected', () => {console.log(`Connected to mongo at ${MONGODB_URI}`)})
+.on('connected', () => {console.log(`Connected to mongo at ${MONGOURI}`)})
 .on('disconnected', () => {console.log('Disconnected')})
 .on('error', (err) => {console.log(`${err.message} ... Is mongodb not working?`)})
 
