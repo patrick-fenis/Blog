@@ -53,6 +53,14 @@ router.get("/", async (req, res) => {
   }
 })
 
+// Edit Route - Edit BLOG
+router.put('/:id', (req, res) => {
+  const resourceId = req.params.id;
+  const updatedData = req.body;
+
+  res.json({ message: 'Resource updated successfully', data: updatedData });
+});
+
 // POST ROUTE - NEW BLOG
 router.post("/post", async (req, res) => {
     try {
@@ -79,6 +87,8 @@ router.delete("/:id", async (req, res) => {
     res.status(400).json(error)
   }
 })
+
+//
 
 
 ////////////////////////////////////////
