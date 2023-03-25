@@ -1,4 +1,4 @@
-# Blog
+# Blog-O-Sphere
 
 This app is going to be a blog. Something along the lines of Tumblr or the like. To achieve MVP we will be building a backend using Node, Express and MongoDB. Using these tools we will create the functionality for a user on this app to be able to create blog posts, view them and edit or delete them from the server altogether. 
 
